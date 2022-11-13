@@ -14,9 +14,21 @@ code {
 
 .cursor {
   position: absolute;
+  color: white;
+  font-size: xx-large;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: xx-large;
+}
+
+.texture-selector {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transform: scale(4);
+}
+
+.texture-selector img.active {
+  border: 2px solid red;
 }

@@ -7,7 +7,7 @@ export const useStore = create((set) => ({
     addCube: (x, y, z) => {
         set((prev) => ({
             cubes: [
-                ... prev.cubes,
+                ...prev.cubes,
                 {
                     key: nanoid(),
                     pos: [x, y, z],
@@ -24,7 +24,11 @@ export const useStore = create((set) => ({
             })
         }))
     },
-    setTexture: () => {},
+    setTexture: (texture) => {
+        set(() => ({
+            texture
+        }))
+    },
     saveWorld: () => {},
     resetWorld: () => {}
 }))
