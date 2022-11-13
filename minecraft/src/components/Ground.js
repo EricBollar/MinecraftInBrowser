@@ -15,12 +15,17 @@ export const Ground = () => {
                 e.stopPropagation()
                 const [x, y, z] = Object.values(e.point)
 
-                if (e.button == 2) {
-                    removeCube(x, y, z);
-                    return;
+                switch (e.button) {
+                    // left click
+                    case 0:
+                        removeCube(x, y, z);
+                        return;
+                    // right click
+                    case 2:
+                        addCube(Math.round(x), Math.round(y), Math.round(z));
+                        return;
+                    default: return;
                 }
-
-                addCube(Math.round(x), Math.round(y), Math.round(z));
             }}
         >
             <planeBufferGeometry attach='geometry' args={[100, 100]} />

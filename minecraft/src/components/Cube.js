@@ -17,23 +17,25 @@ export const Cube = ({position, texture}) => {
                 e.stopPropagation()
                 const {x, y, z} = ref.current.position;
 
-                if (e.button == 2) {
-                    removeCube(x, y, z);
-                    return;
-                }
-
-                const clickedFace = Math.floor(e.faceIndex / 2);
-
-                switch (clickedFace) {
-                    case 0: addCube(x + 1, y, z); return;
-                    case 1: addCube(x - 1, y, z); return;
-                    case 2: addCube(x, y + 1, z); return;
-                    case 3: addCube(x, y - 1, z); return;
-                    case 4: addCube(x, y, z + 1); return;
-                    case 5: addCube(x, y, z - 1); return;
+                switch (e.button) {
+                    // left click
+                    case 0: 
+                        removeCube(x, y, z);
+                        return;
+                    // right click
+                    case 2:
+                        const clickedFace = Math.floor(e.faceIndex / 2);
+                        switch (clickedFace) {
+                            case 0: addCube(x + 1, y, z); return;
+                            case 1: addCube(x - 1, y, z); return;
+                            case 2: addCube(x, y + 1, z); return;
+                            case 3: addCube(x, y - 1, z); return;
+                            case 4: addCube(x, y, z + 1); return;
+                            case 5: addCube(x, y, z - 1); return;
+                            default: return;
+                        }
                     default: return;
                 }
-                addCube(Math.round(x), Math.round(y), Math.round(z));
             }}
         >
             <boxGeometry attach="geometry"/>
