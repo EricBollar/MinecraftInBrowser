@@ -28,15 +28,15 @@ export const TextureSelector = () => {
         }
     }, [setTexture, dirt, grass, glass, wood, log])
 
-    useEffect(() => {
-        // const visibilityTimeout = setTimeout(() => {
-        //     setVisible(false);
-        // }, 2000) // 2 secs
-        // setVisible(true);
-        // return () => {
-        //     clearTimeout(visibilityTimeout);
-        // }
-    }, [activeTexture])
+    // useEffect(() => {
+    //     // const visibilityTimeout = setTimeout(() => {
+    //     //     setVisible(false);
+    //     // }, 2000) // 2 secs
+    //     // setVisible(true);
+    //     // return () => {
+    //     //     clearTimeout(visibilityTimeout);
+    //     // }
+    // }, [activeTexture])
 
     return visible && (
         <div className="texture-selector">

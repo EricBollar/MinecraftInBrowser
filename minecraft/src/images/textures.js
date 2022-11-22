@@ -20,17 +20,10 @@ grassTexture.magFilter = NearestFilter;
 glassTexture.magFilter = NearestFilter;
 woodTexture.magFilter = NearestFilter;
 
-const groundTexture = new TextureLoader().load(grassImg);
-groundTexture.magFilter = NearestFilter;
-groundTexture.wrapS = RepeatWrapping;
-groundTexture.wrapT = RepeatWrapping;
-groundTexture.repeat.set(100, 100);
-
 export {
     dirtTexture,
     logTexture,
     grassTexture,
     glassTexture,
-    woodTexture,
-    groundTexture
+    woodTexture
 }

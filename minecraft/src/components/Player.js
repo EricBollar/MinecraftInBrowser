@@ -3,6 +3,7 @@ import { useSphere } from "@react-three/cannon"
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
 import { useKeyboard } from "../hooks/useKeyboard";
+import { getHeightValue } from '../components/useNoise';
 
 const JUMP_FORCE = 4;
 const SPEED = 5;
@@ -14,7 +15,7 @@ export const Player = () => {
     const [ref, api] = useSphere(() => ({
         mass: 1,
         type: "Dynamic",
-        position: [0, 1, 0]
+        position: [0, getHeightValue(0, 0) + 4, 0]
     }));
 
     // handle velocity
